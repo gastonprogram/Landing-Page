@@ -246,6 +246,7 @@ h3{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
 }
 
 .servicios h3{
@@ -413,10 +414,8 @@ h3{
     }
     
     .contacto{
-        display: flex;
-        flex-wrap: wrap;
-        justify-content: center;
-        padding: 0 10px ;
+        align-items: center;
+        padding: 20px 50px;
     }
 
 
@@ -440,10 +439,6 @@ h3{
 
 
     .form {
-        background-color: #ffffff; /* Fondo gris azulado oscuro */
-        width: 100%;
-        max-width: 450px;
-        height: fit-content;
         padding: 30px 20px;
     }
     
@@ -470,6 +465,40 @@ h3{
         padding: 10px ;
     }
     
+
+
+
+
+    .servicios h3{
+        font-size: 25px;
+        font-weight: 500;
+        margin: 0;
+    }
+    
+    .servicios-container h6{
+        margin: 5px;
+        padding: 5px;
+        font-size: 18px;
+    }
+    
+    .servicios-descripcion{
+        width: 280px;
+        height: 200px;
+        margin: 10px;
+    }
+    
+        
+    .servicios-descripcion p{
+        font-size: 14px;
+        padding: 10px;
+        
+    }
+
+
+
+
+
+
 
 
     .footer-container{
