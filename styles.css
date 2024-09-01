@@ -21,7 +21,7 @@ body{
     margin-right: 100px;
 }
 .header .logo img{
-    height: auto;
+    height: 70px;
     width: auto;
 }
 
@@ -84,7 +84,7 @@ h3{
     flex-wrap: wrap;
     justify-content: center;
     background-color: #435476;
-    padding: 35px 100px;
+    padding: 35px 80px;
     overflow: hidden;
 }
 
@@ -98,7 +98,7 @@ h3{
     color: #fff;
     opacity: 0;
     animation: slideInFromLeft 1s ease forwards; /* Animación de entrada */
-    max-width: 700px;
+    max-width: 550px;
 }
 
 .resaltar-texto{
@@ -137,7 +137,7 @@ h3{
 
 .form {
     background-color: #ffffff; /* Fondo gris azulado oscuro */
-    width: 100%;
+    flex: 1 1 auto;
     max-width: 450px;
     height: fit-content;
     padding: 40px 20px;
@@ -246,7 +246,6 @@ h3{
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    align-items: center;
 }
 
 .servicios h3{
@@ -270,9 +269,12 @@ h3{
     margin: 10px;
     border-radius: 10px;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
-    transition: all 0.3s;
     cursor: pointer;
     opacity: 0;
+}
+
+.servicios-descripcion.visible{
+    transition: animation 0.3s;
     animation: slideInUp 0.8s forwards ease-in-out; 
 }
 
@@ -346,7 +348,11 @@ h3{
     border-radius: 45px 45px 45px 45px;
     box-shadow: 0px 0px 12px 0px rgba(0, 0, 0, 0.3);
     cursor: pointer;
-    animation: show-btn 1s forwards ease-in-out; 
+}
+
+.footer-button.visible{
+
+    animation: show-btn 0.8s forwards ease-in-out; 
     animation-delay: 0.8s;
 }
 
@@ -356,21 +362,202 @@ h3{
     }
 
     to{
-        opacity: 100%;
+        opacity: 1;
     }
 }
 
-@media /*(min-width: 1025px) and */(max-width: 1450px) {
+
+/* configuraciones tablets*/
+
+@media /*(min-width: 1025px) and */(max-width: 1024px) {
+    
+    
+    .header ul li a{
+        font-size: 13px;
+    }
+
+    .header .nav-links button{
+        padding: 12px;
+        font-size: 15px;
+    }
+
+    .header .logo{
+        margin-left: 30px;
+    }
+    
+    .header .nav{
+        margin-right: 30px;
+    }
+
+    
+    
     .contacto{
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        background-color: #435476;
+        padding: 35px 20px;
+        overflow: hidden;
         align-items: center;
     }
+    
 
     .contacto .mensaje-container{
         max-width: 500px;
         font-size: 25px;
     }
 
+    .contacto-links a{
+        padding: 25px;
+        font-size: 15px;
+        font-weight: 600;
+    }
+    
+    #servicios-button{
+        margin-left: 20px;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .form {
+        margin-top: 20px;
+        width: auto;
+        height: fit-content;
+        padding: 30px 15px;
+        text-align: center;
+        flex: 1 1 auto;
+    }
+    
+    .form__title {
+        font-size: 27px;
+        letter-spacing: 0.3px;
+    }
+    
+    .form__container {
+        display: grid;
+        gap: 17px;
+    }
+    
+    .form__input {
+        font-size: 16px;
+        padding: 15px 10px;
+    }
+    
+    .form__submit {
+        background-color: #00bcd4; /* Botón cian brillante */
+        color: #ffffff;
+        font-size: 18px;
+        padding: 13px 0;
+    }
+    
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+    .servicios h3{
+        font-size: 30px;
+        font-weight: 500;
+        margin: 0;
+    }
+
+
+    .servicios-container{
+        margin: auto 70px;
+    }
+    
+    .servicios-container h6{
+        margin: 20px;
+        padding: 5px;
+        font-size: 18px;
+    }
+    
+    .servicios-descripcion{
+        width: 280px;
+        height: 200px;
+        margin: 10px;
+    }
+    
+        
+    .servicios-descripcion p{
+        font-size: 14px;
+        padding: 10px;
+        
+    }
+
+
+
+
+
+
+
+    .button-container {
+        gap: 10px;
+    }
+    .button-container a{
+        padding: 15px;
+        white-space: nowrap;
+        
+    }
+
+
 }
+
+
+
+
+
+
+
+
+
+@media (max-width: 786px) {
+
+    .contacto .mensaje-container {
+        text-align: center;
+    }
+}
+
+
+
 
 
 /* configuraciones celular*/
@@ -394,23 +581,16 @@ h3{
     }
     
     .header .nav-links button{
-        background: #141d2f;
         padding: 10px;
-        border-radius: 30px;
-        border: 0;
-        color: #fff;
         font-size: 15px;
-        cursor: pointer;
     }
     
 
     .titulo h1 {
         width: fit-content;
         margin: 0 auto;
-        border-bottom: 5px solid #435476;
         font-size: 1.5rem;
         font-weight: 700;
-        user-select: none;
     }
     
     .contacto{
@@ -422,7 +602,7 @@ h3{
     .contacto .mensaje-container{
         max-width: 668px;
         text-align: center;
-        font-size: 16px;
+        font-size: 18px;
     }
 
     .contacto-links a{

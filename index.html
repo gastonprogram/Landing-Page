@@ -67,7 +67,7 @@
                 </div>
             </form>
         </section>
-        <section class="servicios">
+        <section class="servicios" id="servicios">
             <h3>Servicios</h3>
             <div class="servicios-container">
                 <div class="servicios-descripcion">
@@ -97,11 +97,44 @@
 
         <section class="footer-container">
             <div class="button-container">
-                <a href="https://wa.me/541125322006">Whatsapp</a>
-                <a href="#contacto">Contacto</a>
-                <a href="#" >Escribir Email</a>
+                <a href="https://wa.me/541125322006" class="footer-button" >Whatsapp</a>
+                <a href="#contacto" class="footer-button" >Contacto</a>
+                <a href="#"  class="footer-button" >Escribir Email</a>
             </div>
         </section>
     </main>
+
+    <script lang="javascript">
+        document.addEventListener('DOMContentLoaded', function() {
+    const serviciosSection = document.getElementById('servicios');
+    const serviciosDescriptions = document.querySelectorAll('.servicios-descripcion');
+    const footerButtons = document.querySelectorAll('.footer-button');
+
+    function isInViewport(element) {
+        const rect = element.getBoundingClientRect();
+        return (
+            rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
+            rect.bottom >= 0
+        );
+    }
+
+    function checkVisibility() {
+        if (isInViewport(serviciosSection)) {
+            serviciosDescriptions.forEach((desc) => {
+                desc.classList.add('visible');
+            });
+            footerButtons.forEach((btn) => {
+                btn.classList.add('visible');
+            });
+            // Si no necesitas seguir monitoreando, puedes remover el listener.
+            window.removeEventListener('scroll', checkVisibility);
+        }
+    }
+
+    window.addEventListener('scroll', checkVisibility);
+    // Comprueba la visibilidad en la carga inicial también.
+    checkVisibility();
+    });
+    </script>
 </body>
 </html>
