@@ -16,8 +16,8 @@
         </div>
         <nav class="nav">
             <ul class="nav-links">
-                <li><a href="#" class="text-email">Escribenos a ggg@gmail.com</a></li>
-                <li><a href="#" class="button-contacto"><button>Contacto</button></a></li>
+                <li><a href="mailto:gaston.hirschbein@gmail.com?Subject=Contactar%20Agencia%20Desarrollo%20Web" class="text-email">Escribenos a ggg@gmail.com</a></li>
+                <li><a href="#contacto" class="button-contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -38,7 +38,7 @@
                 <h4>Creamos su sitio web profesional para potenciar su presencia en linea y aumentar sus ventas.</h4>
                 <form class="contacto-links">
                     <a href="https://wa.me/541125322006">Contactar por Whatsapp</a>
-                    <a href="#top" id="servicios-button">Servicios</a>
+                    <a href="#servicios" id="servicios-button">Servicios</a>
                 </form>
             </div>
 
@@ -97,44 +97,42 @@
 
         <section class="footer-container">
             <div class="button-container">
-                <a href="https://wa.me/541125322006" class="footer-button" >Whatsapp</a>
+                <a href="https://wa.me/542944156848" class="footer-button" >Whatsapp</a>
                 <a href="#contacto" class="footer-button" >Contacto</a>
-                <a href="#"  class="footer-button" >Escribir Email</a>
+                <a href="mailto:gaston.hirschbein@gmail.com?Subject=Contactar%20Agencia%20Desarrollo%20Web" class="footer-button">Escribir Email</a>
             </div>
         </section>
     </main>
 
     <script lang="javascript">
         document.addEventListener('DOMContentLoaded', function() {
-    const serviciosSection = document.getElementById('servicios');
     const serviciosDescriptions = document.querySelectorAll('.servicios-descripcion');
     const footerButtons = document.querySelectorAll('.footer-button');
 
-    function isInViewport(element) {
-        const rect = element.getBoundingClientRect();
-        return (
-            rect.top < (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.bottom >= 0
-        );
+    const observerOptions = {
+        root: null, // Utiliza el viewport como root
+        rootMargin: '0px',
+        threshold: 0.1 // Se activa cuando al menos el 10% del elemento es visible
+    };
+
+    function handleIntersection(entries, observer) {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add('visible');
+            }
+        });
     }
 
-    function checkVisibility() {
-        if (isInViewport(serviciosSection)) {
-            serviciosDescriptions.forEach((desc) => {
-                desc.classList.add('visible');
-            });
-            footerButtons.forEach((btn) => {
-                btn.classList.add('visible');
-            });
-            // Si no necesitas seguir monitoreando, puedes remover el listener.
-            window.removeEventListener('scroll', checkVisibility);
-        }
-    }
+    const observer = new IntersectionObserver(handleIntersection, observerOptions);
 
-    window.addEventListener('scroll', checkVisibility);
-    // Comprueba la visibilidad en la carga inicial también.
-    checkVisibility();
+    serviciosDescriptions.forEach(desc => {
+        observer.observe(desc);
     });
+
+    footerButtons.forEach(btn => {
+        observer.observe(btn);
+    });
+});
     </script>
 </body>
 </html>
