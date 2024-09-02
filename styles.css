@@ -633,25 +633,25 @@ h3{
     }
     
     .form__title {
-        font-size: 20px;
+        font-size: 24px;
         margin-bottom: 10px;
     }
     
     
     .form__container {
         display: grid;
-        gap: 15px;
+        gap: 20px;
     }
     
     .form__input {
         font-weight: 400;
-        font-size: 14px;
-        padding: 10px 7px;
+        font-size: 20px;
+        padding: 12px 9px;
         margin-top: 3px;
     }
     
     .form__submit {
-        font-size: 15px;
+        font-size: 20px;
         padding: 10px ;
     }
     
